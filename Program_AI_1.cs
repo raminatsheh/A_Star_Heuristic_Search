@@ -38,32 +38,6 @@ namespace Robot
             int [] PointValue11 = new  int[6]  {230, 600, 250, 620, 240, 580};
             int [] PointValue12 = new  int[8]  {270, 680, 360, 695, 340, 675, 260, 666};
 
-            /*  Polygon 1:   ((220, 616), (220, 666), (251, 670), (272, 647))
-             *          int[8] {220, 616, 220, 666, 251, 670, 272, 647};
-                Polygon 2:   ((341, 655), (359, 667), (374, 651), (366, 577))
-             *          int[8] {341, 655, 359, 667, 374, 651, 366, 577};
-                Polygon 3:   ((311, 530), (311, 559), (339, 578), (361, 560), (361, 528), (336, 516))
-             *        int[12] {311, 530,   311, 559,   339, 578,   361, 560,   361, 528,   336, 516};
-                Polygon 4:   ((105, 628), (151, 670), (180, 629), (156, 577), (113, 587))
-             *        int[10] {105, 628,   151, 670,   180, 629,   156, 577,   113, 587};
-                Polygon 5:   ((118, 517), (245, 517), (245, 557), (118, 557))
-             *        int[8] {118, 517,    245, 517,   245, 557,   118, 557};
-                Polygon 6:   ((280, 583), (333, 583), (333, 665), (280, 665))
-             *                {280, 583,   333, 583,   333, 665,   280, 665};
-                Polygon 7:   ((252, 594), (290, 562), (264, 538))
-             *                {252, 594,   290, 562,   264, 538};
-                Polygon 8:   ((198, 635), (217, 574), (182, 574))
-             *                {198, 635,   217, 574,   182, 574};
-                Polygon 9:   ((190, 675), (210, 675), (210, 650), (190, 645), (190, 675))
-             *                {190, 675,   210, 675,   210, 650, 190, 645};
-                Polygon 10: ((280, 540), (305, 550), (300, 510), (280, 510), (280, 540))
-             *        int[8] {280, 540,   305, 550,   300, 510,   280, 510};
-                Polygon 11: ((230, 600), (250, 620), (240, 580), (230, 600))
-             *               {230, 600,   250, 620,   240, 580};
-                Polygon 12: ((270, 680), (360, 695), (340, 675), 	(260, 666), (270, 680))
-             *       int[8]  {270, 680,   360, 695,   340, 675,      260, 666};
-            */
-
 
 
             Polygon Polygon1 = new Polygon(8, PointValue1);
@@ -212,9 +186,6 @@ namespace Robot
                     P.Costg = x.Costg+GetDistanceG(x,P);
                     P.Cost = P.Costg + P.Costh;
                 }
-                //Console.Write(x.x);
-                //Console.Write("  ");
-                //Console.WriteLine(x.y);
 
 	            /* add remaining children of X, in order of discovery (According to Cost), 
 	             to the right end of open, then clear Children */
@@ -370,12 +341,8 @@ namespace Robot
                     }
                     if (!interset_Status)
                     {
-
-                        //Console.Write(CurrentLine.EndPoint.x);
-                        //Console.Write("  ");
-                        //Console.WriteLine(CurrentLine.EndPoint.y);
                         x.Add(CurrentLine.EndPoint);
-                        //Console.WriteLine(x.Count);
+  
 
                     }
 
@@ -427,12 +394,6 @@ namespace Robot
                     }
                     else
                     {
-                        //Console.Write(P.Points[index-1].x);
-                        //Console.Write("   ");
-                        //Console.WriteLine(P.Points[index-1].y);
-                        //Console.Write(P.Points[index+1].x);
-                        //Console.Write("   ");
-                        //Console.WriteLine(P.Points[index+1].y);
                         x.Add(P.Points[index - 1]);
                         x.Add(P.Points[index + 1]);
                     }
